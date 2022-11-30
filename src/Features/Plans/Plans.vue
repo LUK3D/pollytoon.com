@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 </script>
 <template >
-    <div class="w-full grid grid-cols-3 gap-4 px-30 mb-20">
+    <div class="w-full grid md:grid-cols-3 gap-4 md:px-30 mb-20">
 
         <div
             class="col-span-1 p-10 shadow-2xl rounded-lg p-10 flex flex-col items-center bg-gradient-to-t to-ll-100 from-ll-200 mt-10">
@@ -36,7 +36,7 @@
             </ul>
             <div class="h-full flex flex-col justify-end">
                 <button
-                    class="bg-ll-primary px-20 border-2 border-sky-400 bg-opacity-50 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Pick
+                    class="bg-ll-primary px-10 md:px-20 border-2 border-sky-400 bg-opacity-50 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Pick
                     this plan</button>
             </div>
         </div>
@@ -102,7 +102,7 @@
             </ul>
             <div class="h-full flex flex-col justify-end">
                 <button
-                    class="bg-ll-primary px-20 border-2 border-sky-400 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Pick
+                    class="bg-ll-primary px-10 md:px-20 border-2 border-sky-400 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Pick
                     this plan</button>
             </div>
         </div>
@@ -172,7 +172,7 @@
             </ul>
             <div class="h-full flex flex-col justify-end">
                 <button
-                    class="bg-ll-primary px-20 border-2 border-sky-400 bg-opacity-50 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Pick
+                    class="bg-ll-primary px-10 md:px-20 border-2 border-sky-400 bg-opacity-50 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Pick
                     this plan</button>
             </div>
         </div>
