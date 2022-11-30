@@ -1,11 +1,16 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import PollyViewer from './components/PollyViewer.vue'
+import PollyViewer from './Features/3dview/PollyViewer.vue'
+import Head from './components/Head.vue'
 </script>
 
 <template>
-  <PollyViewer msg="Vite + Vue" />
+  <div class="w-screen h-screen overscroll-y-auto flex flex-col">
+
+    <Head></Head>
+    <PollyViewer msg="Vite + Vue" />
+  </div>
 </template>
 
 <style scoped>

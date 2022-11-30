@@ -23,10 +23,12 @@
       </div>
     </div>
     <div class=" h-full ">
-      <Renderer ref="renderer" :alpha="true" :antialias="true" :resize="true" orbit-ctrl>
+      <Renderer ref="renderer" :alpha="true" :antialias="true" :resize="true"
+        :orbit-ctrl="{ enableDamping: true, dampingFactor: 0.05 }" pointer>
         <Camera :position="{ z: 5 }" />
         <Scene>
           <PointLight :position="{ y: 50, z: 50 }" />
+
           <GltfModel src="./3dmodels/theguy.gltf" :position="{ y: -1 }" />
 
 
