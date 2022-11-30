@@ -7,8 +7,7 @@
 
 <template>
 
-  <div
-    class="w-screen h-screen overflow-hidden  flex flex-col-reverse md:grid md:grid-cols-2 bg-gradient-to-br from-ll-100 to-ll-200">
+  <div class="w-screen min-h-[600px] overflow-hidden  flex flex-col-reverse md:grid md:grid-cols-2 ">
     <div class="z-1 h-full flex flex-col justify-center  md:pl-10 p-5">
       <h1 class="text-4xl md:text-8xl font-bold text-gray-200">PollyToon</h1>
       <p class="text-sm md:text-normal text-gray-200 mt-4 font-light">

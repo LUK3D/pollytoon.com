@@ -3,13 +3,15 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import PollyViewer from './Features/3dview/PollyViewer.vue'
 import Head from './components/Head.vue'
+import Plans from './Features/Plans/Plans.vue';
 </script>
 
 <template>
-  <div class="w-screen h-screen overscroll-y-auto flex flex-col">
+  <div class="w-full h-full overflow-y-auto overflow-x-hidden flex flex-col bg-gradient-to-br from-ll-100 to-ll-200">
 
     <Head></Head>
-    <PollyViewer msg="Vite + Vue" />
+    <PollyViewer />
+    <Plans></Plans>
   </div>
 </template>
 
