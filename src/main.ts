@@ -3,4 +3,10 @@ import './style.css'
 import 'virtual:windi.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import { TroisJSVuePlugin } from 'troisjs';
+
+const app = createApp(App);
+app.use(TroisJSVuePlugin);
+
+
+app.mount('#app')

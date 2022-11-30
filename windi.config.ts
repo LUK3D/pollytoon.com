@@ -7,6 +7,11 @@ export default defineConfig({
     theme: {
         extend: {
             colors: {
+                ll: {
+                    100: '#191B28',
+                    200: '#242839',
+                    primary: '#1E93FF',
+                }
                 // teal: {
                 //   100: '#096',
                 // },
