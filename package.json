@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.6.0",
+    "three": "0.134",
+    "troisjs": "^0.3.4",
     "vue": "^3.2.41"
   },
   "devDependencies": {
