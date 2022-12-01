@@ -11,7 +11,7 @@ import Plans from './Features/Plans/Plans.vue';
 
     <Head></Head>
     <PollyViewer />
-    <Plans></Plans>
+    <Plans class="mt-20"></Plans>
   </div>
 </template>
 

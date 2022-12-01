@@ -7,7 +7,7 @@ import { AnimationMixer, Clock } from 'three';
 
 <template>
 
-  <div class="w-screen min-h-[600px] overflow-hidden  flex flex-col-reverse md:grid md:grid-cols-2 ">
+  <div class="w-screen min-h-[600px] overflow-none  flex flex-col-reverse md:grid md:grid-cols-2 ">
     <div class="z-1 h-full flex flex-col justify-center  md:pl-10 p-5">
       <h1 class="text-4xl md:text-8xl font-bold text-gray-200">PollyToon</h1>
       <p class="text-sm md:text-normal text-gray-200 mt-4 font-light">
@@ -15,28 +15,24 @@ import { AnimationMixer, Clock } from 'three';
         design, animation or game project. Each month we launch new collections, pick a plan to start get access to all
         dataset.
       </p>
-      <div class="mt-10">
+      <div class="mt-10 flex">
         <button
-          class="bg-ll-primary px-5 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Pick
-          a
-          Plan</button>
+          class="bg-ll-primary px-5 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Sign
+          up for free</button>
       </div>
     </div>
-    <div class="opacity-60 z-0  w-full md:relative h-full pt-10 md:pt-0">
-      <Renderer ref="renderer" :alpha="true" :antialias="true" :resize="true" shadow
+    <div class=" z-0  w-full md:relative h-full pt-10 md:pt-0 flex justify-center  items-end md:items-center">
+
+      <img src="../../assets/images/naruto.png" alt="pollytoon 3D model of naruto"
+        class="h-4/5 pt-10 animate-bubble animate-duration-[10.3s]">
+      <!-- <Renderer class="hidden" ref="renderer" :alpha="true" :antialias="true" :resize="true" shadow
         :orbit-ctrl="{ enableDamping: true, dampingFactor: 0.05 }" pointer>
         <Camera :position="{ z: 10 }" />
         <Scene>
-          <!-- 
-         
-
-
-           -->
           <HemisphereLight />
           <PointLight intensity="0.1" :position="{ y: 50, z: 50 }" />
           <PointLight intensity="0.5" color="#DF4F60" :position="{ y: 150, z: -300 }" />
-          <PointLight intensity="0.5" :position="{ y: -150, x: 20, z: -300 }" /> -->
-          <!-- <PointLight :position="{ y: -200, z: 200 }" /> -->
+          <PointLight intensity="0.5" :position="{ y: -150, x: 20, z: -300 }" />
 
 
           <PointLight intensity="0.1" color="#8669FD" :position="{ x: 100 }" />
@@ -45,11 +41,10 @@ import { AnimationMixer, Clock } from 'three';
             :shadow-camera="{ top: 180, bottom: -120, left: -120, right: 120 }" />
 
           <GltfModel src="./3dmodels/pollytoon_naruto.glb" :position="{ y: -1 }" @load="onLoad" />
-          <!-- <FbxModel src="./3dmodels/pollytoon_naruto.fbx" @load="onLoad" /> -->
 
         </Scene>
 
-      </Renderer>
+      </Renderer> -->
     </div>
   </div>
 
