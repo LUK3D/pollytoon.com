@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { AnimationMixer, Clock } from 'three';
 // defineProps<{ msg: string }>()
 
 
@@ -23,16 +23,32 @@
       </div>
     </div>
     <div class="opacity-60 z-0  w-full md:relative h-full pt-10 md:pt-0">
-      <Renderer ref="renderer" :alpha="true" :antialias="true" :resize="true"
+      <Renderer ref="renderer" :alpha="true" :antialias="true" :resize="true" shadow
         :orbit-ctrl="{ enableDamping: true, dampingFactor: 0.05 }" pointer>
-        <Camera :position="{ z: 5 }" />
+        <Camera :position="{ z: 10 }" />
         <Scene>
-          <PointLight :position="{ y: 50, z: 50 }" />
+          <!-- 
+         
 
-          <GltfModel src="./3dmodels/theguy.gltf" :position="{ y: -1.5 }" />
 
+           -->
+          <HemisphereLight />
+          <PointLight intensity="0.1" :position="{ y: 50, z: 50 }" />
+          <PointLight intensity="0.5" color="#DF4F60" :position="{ y: 150, z: -300 }" />
+          <PointLight intensity="0.5" :position="{ y: -150, x: 20, z: -300 }" /> -->
+          <!-- <PointLight :position="{ y: -200, z: 200 }" /> -->
+
+
+          <PointLight intensity="0.1" color="#8669FD" :position="{ x: 100 }" />
+          <PointLight intensity="0.1" color="#8669FD" :position="{ x: -100 }" />
+          <DirectionalLight :position="{ x: 0, y: 200, z: 100 }" cast-shadow
+            :shadow-camera="{ top: 180, bottom: -120, left: -120, right: 120 }" />
+
+          <GltfModel src="./3dmodels/pollytoon_naruto.glb" :position="{ y: -1 }" @load="onLoad" />
+          <!-- <FbxModel src="./3dmodels/pollytoon_naruto.fbx" @load="onLoad" /> -->
 
         </Scene>
+
       </Renderer>
     </div>
   </div>
@@ -44,6 +60,38 @@
 
 
 export default {
+
+  methods: {
+    onLoad(object: any) {
+      //@ts-ignore
+      this.mixer = new AnimationMixer(object);
+      //@ts-ignore
+      console.log(object.animations)
+
+      object.animations.forEach((anim: any) => {
+        //@ts-ignore
+        const action = this.mixer.clipAction(anim);
+        action.play();
+      });
+
+
+      //@ts-ignore
+      // const action2 = this.mixer.clipAction(object.animations[1]);
+      // action2.play();
+      // //@ts-ignore
+
+      // object.traverse(function (child) {
+      //   if (child.isMesh) {
+      //     child.castShadow = true;
+      //     child.receiveShadow = true;
+      //   }
+      // });
+      //@ts-ignore
+      this.clock = new Clock();
+      // //@ts-ignore
+      // this.$refs.renderer.onBeforeRender(this.updateMixer);
+    }
+  },
   mounted() {
     // const renderer: any = this.$refs.renderer;
 
