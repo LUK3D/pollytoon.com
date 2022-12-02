@@ -2,6 +2,8 @@
 
 import { ref } from 'vue';
 import logo from '../assets/pollytoon_large.svg';
+import { IUser } from '../types';
+import { googleOneTap, decodeCredential, googleLogout, } from "vue3-google-login"
 
 const showMenu = ref(false);
 
@@ -25,7 +27,7 @@ const showMenu = ref(false);
             
                         ${showMenu ? 'w-full' : 'w-0 p-0 md:w-full'}
             
-            h-screen md:h-auto p-5 md:p-0 top-0 left-0 flex flex-col overflow-x-hidden  transition-all md:flex-row items-center justify-between absolute md:relative bg-ll-100 bg-opacity-80 md:bg-transparent`">
+            h-screen md:h-auto p-5 md:p-0 top-0 left-0 flex flex-col overflow-x-hidden md:overflow-hidden transition-all md:flex-row items-center justify-between absolute md:relative bg-ll-100 bg-opacity-80 md:bg-transparent`">
             <div class="flex flex-col md:flex-row w-full">
                 <a href="#" class="mr-10 mb-4 md:mb-0 md:hidden relative">
                     <img :src="logo" alt="" class="h-10">
@@ -64,15 +66,68 @@ const showMenu = ref(false);
                     </svg>
 
                 </button> -->
+                <GoogleLogin :callback="onLoginCallback" prompt auto-login />
 
-                <button
-                    class="mt-10 md:mt-0 ml-2 whitespace-nowrap bg-ll-primary px-5 py-2 text-white rounded-md active:scale-95 transform transition-transform">Login</button>
+                <button v-if="loggedUser.email" @click="() => {
+                    googleLogout();
+                    loggedUser = {};
+                    createUserStep = 0;
+                }"
+                    class="mt-10 md:mt-0 ml-2 whitespace-nowrap bg-ll-primary px-5 py-2 text-white rounded-md active:scale-95 transform transition-transform">Logout</button>
             </div>
         </div>
     </div>
 </template>
 <script lang="ts">
 export default {
+
+    data: function () {
+
+        return new class {
+            createUserStep: number = 0;
+            maxSteps = 3;
+            showWelcome: boolean = false;
+            loggedUser: IUser = {};
+            darkMode: boolean = true;
+            animeThemes: Array<Object> = [
+                { label: "Manga" },
+                { label: "Anime" },
+                { label: "Cartoon" },
+                { label: "Comic" },
+            ];
+
+
+
+        }();
+    },
+
+    mounted() {
+        const ctx = this;
+
+        setTimeout(() => {
+            googleOneTap()
+                .then((response) => {
+                    ctx.onLoginCallback(response)
+                })
+                .catch((error) => {
+                    console.log("Handle the error", error)
+                })
+
+        }, 500);
+    },
+
+    methods: {
+        onLoginCallback: function (response: any) {
+
+            const userData = decodeCredential(response.credential)
+            this.loggedUser = userData;
+            this.showWelcome = true;
+            this.createUserStep = 0;
+            // //@ts-ignore
+            // window.user = userData;
+
+        }
+    }
 
 }
 </script>
