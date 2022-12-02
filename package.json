@@ -9,11 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^1.45.0",
     "@vercel/analytics": "^0.1.5",
+    "@vue-stripe/vue-stripe": "^4.4.4",
     "@vueuse/core": "^9.6.0",
     "three": "^0.147.0",
     "troisjs": "^0.3.4",
-    "vue": "^3.2.41"
+    "vue": "^3.2.41",
+    "vue3-google-login": "^2.0.12"
   },
   "devDependencies": {
     "@types/three": "^0.146.0",

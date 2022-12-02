@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+
+
+
+const basicPlan = async () => {
+
+}
+
+
 </script>
 <template >
     <div class="w-full grid md:grid-cols-3 gap-4 md:px-30 mb-20">
@@ -50,7 +58,7 @@
             <p class="text-4xl text-ll-primary font-semibold mt-5">$19.99<span class="font-normal text-sm">/Month</span>
             </p>
 
-            <ul class="text-gray-300 mt-10">
+            <ul id="pricing" class="text-gray-300 mt-10">
                 <li class="flex items-center mb-5">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6 mr-2 text-ll-primary">
@@ -101,7 +109,7 @@
                 </li>
             </ul>
             <div class="h-full flex flex-col justify-end">
-                <button
+                <button @click="basicPlan"
                     class="bg-ll-primary px-10 md:px-20 border-2 border-sky-400 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Pick
                     this plan</button>
             </div>
@@ -177,8 +185,12 @@
             </div>
         </div>
     </div>
+
 </template>
-<script>
+<script lang="ts">
+
+
+
 export default {
 
 }

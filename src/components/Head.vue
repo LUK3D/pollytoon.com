@@ -39,14 +39,13 @@ const showMenu = ref(false);
 
 
                 </button>
-                <a href="#" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Home</a>
-                <a href="#" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Shop</a>
-                <a href="#" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Pricing</a>
+                <a href="#home" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Home</a>
+                <a href="#pricing" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Pricing</a>
                 <a href="#" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">About</a>
                 <a href="#" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Contacts</a>
             </div>
-            <div class=" flex md:items-center flex-col md:flex-row w-full  md:justify-between">
-                <div class="bg-ll-200 rounded-md flex items-center shadow-lg md:hidden lg:flex">
+            <div class=" flex md:items-center flex-col md:flex-row w-full  md:justify-end">
+                <!-- <div class="bg-ll-200 rounded-md flex items-center shadow-lg md:hidden lg:flex">
                     <input type="text" placeholder="Search..."
                         class="bg-transparent outline-none border-none px-2 active:outline-none w-full">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -55,7 +54,7 @@ const showMenu = ref(false);
                             d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>
 
-                </div>
+                </div> -->
                 <!-- 
                 <button
                     class=" hidden md:flex w-10 h-10 bg-ll-200 mx-5 flex items-center justify-center rounded-full text-gray-500 active:scale-95 transform transition-transform">
