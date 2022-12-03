@@ -4,7 +4,7 @@
 import PollyViewer from './Features/3dview/PollyViewer.vue'
 import Head from './components/Head.vue'
 import Plans from './Features/Plans/Plans.vue';
-import Collection from './Features/Collection/Collection.vue';
+import Collection from './Features/collection/Collection.vue';
 </script>
 
 <template>
