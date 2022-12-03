@@ -4,6 +4,7 @@
 import PollyViewer from './Features/3dview/PollyViewer.vue'
 import Head from './components/Head.vue'
 import Plans from './Features/Plans/Plans.vue';
+import Collection from './Features/Collection/Collection.vue';
 </script>
 
 <template>
@@ -11,7 +12,9 @@ import Plans from './Features/Plans/Plans.vue';
 
     <Head></Head>
     <PollyViewer />
+    <Collection />
     <Plans class="mt-20"></Plans>
+
   </div>
 </template>
 
