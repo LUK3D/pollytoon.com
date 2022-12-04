@@ -71,7 +71,7 @@ const showMenu = ref(false);
                     <div class="w-10 h-10 rounded-full bg-gray-200">
                         <img :src="loggedUser.picture" class="w-full h-full rounded-full object-cover" alt="">
                     </div>
-                    <p class="text-sm mx-1">{{ loggedUser.name }} Lukebana</p>
+                    <p class="text-sm mx-1">{{ loggedUser.name }}</p>
                 </div>
                 <GoogleLogin v-if="!loggedUser.email" :callback="onLoginCallback" prompt auto-login class="mb-2" />
 
