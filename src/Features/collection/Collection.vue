@@ -43,7 +43,7 @@ const props = defineProps({
                     </li>
                     <li class="mb-2 flex">
                         <p>File Size:</p>
-                        <p class="ml-3">24.6MB</p>
+                        <p class="ml-3">27.4MB</p>
                     </li>
                     <li class="mb-2 flex text-xs border-t pt-2">
                         <p>6 different expressions 1 full size image and 1 3D file</p>
