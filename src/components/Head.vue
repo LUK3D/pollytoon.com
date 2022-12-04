@@ -4,6 +4,7 @@ import { ref, } from 'vue';
 import logo from '../assets/pollytoon_large.svg';
 import { IUser } from '../types';
 import { googleOneTap, decodeCredential, googleLogout, } from "vue3-google-login"
+import axios from "axios";
 
 const showMenu = ref(false);
 
@@ -114,13 +115,24 @@ export default {
         const ctx = this;
 
         setTimeout(() => {
-            googleOneTap()
-                .then((response) => {
-                    ctx.onLoginCallback(response)
-                })
-                .catch((error) => {
-                    console.log("Handle the error", error)
-                })
+            let tmpUser = localStorage.getItem('user');
+
+            if (tmpUser) {
+                this.loggedUser = JSON.parse(tmpUser);
+                this.$.emit("onLogin", this.loggedUser);
+            } else {
+                googleOneTap()
+                    .then((response) => {
+                        ctx.onLoginCallback(response)
+                    })
+                    .catch((error) => {
+                        console.log("Handle the error", error)
+                    })
+            }
+
+
+
+
 
         }, 500);
     },
@@ -133,9 +145,29 @@ export default {
             this.showWelcome = true;
             this.createUserStep = 0;
 
-            this.$.emit("onLogin", this.loggedUser);
+
+            const options = {
+                method: 'POST',
+                url: 'https://next.luk3d.com/public/api/clients',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                data: this.loggedUser
+            };
+
+            axios.request(options).then((response) => {
+
+                localStorage.setItem('user', JSON.stringify(this.loggedUser));
+
+                this.$.emit("onLogin", this.loggedUser);
+            }).catch(function (error) {
+                console.error(error);
+            });
+
+
+
+
             // //@ts-ignore
             // window.user = userData;
+
 
         }
     }
