@@ -80,8 +80,9 @@ const showMenu = ref(false);
 
                 <button v-if="loggedUser.email" @click="() => {
                     googleLogout();
-                    loggedUser = {};
-                    createUserStep = 0;
+                
+                    logout();
+                
                 }"
                     class="mt-10 md:mt-0 ml-2 mb-2 whitespace-nowrap bg-ll-primary px-5 py-2 text-white rounded-md active:scale-95 transform transition-transform">Logout</button>
             </div>
@@ -169,6 +170,12 @@ export default {
             // window.user = userData;
 
 
+        },
+
+        logout: function () {
+            this.loggedUser = {};
+            this.createUserStep = 0;
+            localStorage.removeItem('user');
         }
     }
 
