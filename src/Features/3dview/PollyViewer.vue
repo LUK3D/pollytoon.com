@@ -8,10 +8,10 @@ import { AnimationMixer, Clock } from 'three';
 <template>
 
   <div id="home"
-    class="w-screen min-h-[600px] overflow-none  flex flex-col-reverse md:grid md:grid-cols-2 bg-ll-200 shadow ">
+    class="w-screen min-h-[600px] overflow-none  flex flex-col-reverse md:grid md:grid-cols-2 bg-gray-700 shadow ">
     <div class="z-1 h-full flex flex-col justify-center  md:pl-10 p-5">
       <h1 class="text-4xl md:text-8xl font-bold text-ll-primary ">PollyToon</h1>
-      <p class="text-sm md:text-normal text-gray-400 mt-4 font-light">
+      <p class="text-sm md:text-normal text-gray-300 mt-4 font-light">
         Welcome to Pollytoon, we are a company that provide various collections of 3D models that you can use on your
         design, animation or game project. Each month we launch new collections, pick a plan to start get access to all
         dataset.

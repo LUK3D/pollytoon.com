@@ -67,14 +67,14 @@ const showMenu = ref(false);
                     </svg>
 
                 </button> -->
-                <GoogleLogin :callback="onLoginCallback" prompt auto-login class="mb-2" />
+                <GoogleLogin v-if="!loggedUser.email" :callback="onLoginCallback" prompt auto-login class="mb-2" />
 
                 <button v-if="loggedUser.email" @click="() => {
                     googleLogout();
                     loggedUser = {};
                     createUserStep = 0;
                 }"
-                    class="mt-10 md:mt-0 ml-2 whitespace-nowrap bg-ll-primary px-5 py-2 text-white rounded-md active:scale-95 transform transition-transform">Logout</button>
+                    class="mt-10 md:mt-0 ml-2 mb-2 whitespace-nowrap bg-ll-primary px-5 py-2 text-white rounded-md active:scale-95 transform transition-transform">Logout</button>
             </div>
         </div>
     </div>
