@@ -7,10 +7,11 @@ import { AnimationMixer, Clock } from 'three';
 
 <template>
 
-  <div id="home" class="w-screen min-h-[600px] overflow-none  flex flex-col-reverse md:grid md:grid-cols-2 ">
+  <div id="home"
+    class="w-screen min-h-[600px] overflow-none  flex flex-col-reverse md:grid md:grid-cols-2 bg-ll-200 shadow ">
     <div class="z-1 h-full flex flex-col justify-center  md:pl-10 p-5">
-      <h1 class="text-4xl md:text-8xl font-bold text-gray-200">PollyToon</h1>
-      <p class="text-sm md:text-normal text-gray-200 mt-4 font-light">
+      <h1 class="text-4xl md:text-8xl font-bold text-ll-primary ">PollyToon</h1>
+      <p class="text-sm md:text-normal text-gray-400 mt-4 font-light">
         Welcome to Pollytoon, we are a company that provide various collections of 3D models that you can use on your
         design, animation or game project. Each month we launch new collections, pick a plan to start get access to all
         dataset.
@@ -21,10 +22,10 @@ import { AnimationMixer, Clock } from 'three';
           up for free</button>
       </div>
     </div>
-    <div class=" z-0  w-full md:relative h-full pt-10 md:pt-0 flex justify-center  items-end md:items-center">
+    <div class=" z-0  w-full md:relative h-full  flex justify-center  items-end md:items-center">
 
       <img src="../../assets/images/naruto.png" alt="pollytoon 3D model of naruto"
-        class="h-4/5 pt-10 animate-bubble animate-duration-[10.3s]">
+        class="h-4/5 pt-10 animate-bubble animate-duration-[10.3s] animate-loop">
       <!-- <Renderer class="hidden" ref="renderer" :alpha="true" :antialias="true" :resize="true" shadow
         :orbit-ctrl="{ enableDamping: true, dampingFactor: 0.05 }" pointer>
         <Camera :position="{ z: 10 }" />

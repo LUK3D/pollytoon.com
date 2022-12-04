@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { ref } from 'vue';
+import { ref, } from 'vue';
 import logo from '../assets/pollytoon_large.svg';
 import { IUser } from '../types';
 import { googleOneTap, decodeCredential, googleLogout, } from "vue3-google-login"
@@ -9,7 +9,8 @@ const showMenu = ref(false);
 
 </script>
 <template >
-    <div class="z-10 flex items-center justify-between px-5 md:px-10 fixed top-0 left-0 w-full py-2 text-white">
+    <div
+        class="z-10 flex items-center justify-between px-5 md:px-10 fixed top-0 left-0 w-full py-2 text-gray-500 bg-ll-200 shadow-lg ">
         <div class="w-1/4 flex items-center">
             <button @click="showMenu = !showMenu"
                 class="md:hidden mr-10  p-1 rounded-md bg-ll-100 active:scale-95 transform transition-transform">
@@ -66,7 +67,7 @@ const showMenu = ref(false);
                     </svg>
 
                 </button> -->
-                <GoogleLogin :callback="onLoginCallback" prompt auto-login />
+                <GoogleLogin :callback="onLoginCallback" prompt auto-login class="mb-2" />
 
                 <button v-if="loggedUser.email" @click="() => {
                     googleLogout();
@@ -123,6 +124,8 @@ export default {
             this.loggedUser = userData;
             this.showWelcome = true;
             this.createUserStep = 0;
+
+            this.$.emit("onLogin", this.loggedUser);
             // //@ts-ignore
             // window.user = userData;
 

@@ -8,8 +8,8 @@ export default defineConfig({
         extend: {
             colors: {
                 ll: {
-                    100: '#191B28',
-                    200: '#242839',
+                    100: '#ECECEC',
+                    200: '#F9FBFC',
                     primary: '#1E93FF',
                 }
                 // teal: {

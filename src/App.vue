@@ -5,18 +5,45 @@ import PollyViewer from './Features/3dview/PollyViewer.vue'
 import Head from './components/Head.vue'
 import Plans from './Features/Plans/Plans.vue';
 import Collection from './Features/collection/Collection.vue';
+
+import { PropType } from 'vue'
+import { IUser } from './types';
+
+
+
+
+
 </script>
 
 <template>
   <div class="w-full h-full overflow-y-auto overflow-x-hidden flex flex-col bg-gradient-to-br from-ll-100 to-ll-200">
 
-    <Head></Head>
+    <Head @on-login="(_user) => {
+      user = _user;
+    }"></Head>
     <PollyViewer />
-    <Collection />
-    <Plans class="mt-20"></Plans>
+    <Collection :user="user" />
+    <!-- <Plans class="mt-20"></Plans> -->
 
   </div>
 </template>
+
+
+<script lang="ts">
+
+export default {
+  data() {
+    return {
+      user: {
+        type: Object as PropType<IUser>
+
+      }
+    }
+  }
+}
+
+</script>
+
 
 <style scoped>
 .logo {
