@@ -43,7 +43,7 @@ const showMenu = ref(false);
 
                 </button>
                 <a href="#home" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Home</a>
-                <a href="#pricing" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Pricing</a>
+                <!-- <a href="#pricing" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Pricing</a> -->
                 <a href="#" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">About</a>
                 <a href="#" class="md:mr-4 lg:mr-10 mb-4 md:mb-0">Contacts</a>
             </div>
@@ -67,7 +67,15 @@ const showMenu = ref(false);
                     </svg>
 
                 </button> -->
+                <div v-if="loggedUser.email" class="flex items-center mr-2">
+                    <div class="w-10 h-10 rounded-full bg-gray-200">
+                        <img :src="loggedUser.picture" class="w-full h-full rounded-full object-cover" alt="">
+                    </div>
+                    <p class="text-sm mx-1">{{ loggedUser.name }} Lukebana</p>
+                </div>
                 <GoogleLogin v-if="!loggedUser.email" :callback="onLoginCallback" prompt auto-login class="mb-2" />
+
+
 
                 <button v-if="loggedUser.email" @click="() => {
                     googleLogout();
