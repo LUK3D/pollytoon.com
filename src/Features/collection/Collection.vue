@@ -48,7 +48,8 @@ const props = defineProps({
                 free
             </p>
             <a href="https://zona.luk3d.com/cdn/pollytoon/pollytoon.com.collection.naruto.zip" target="_blank" download
-                v-show="props.user?.email" class="w-full  bg-ll-primary text-white py-2">
+                v-show="props.user?.email"
+                class="w-full  bg-ll-primary text-white py-2 text-center flex items-center justify-center">
                 <p>Download</p>
             </a>
         </div>
