@@ -13,13 +13,13 @@ import { AnimationMixer, Clock } from 'three';
       <h1 class="text-4xl md:text-8xl font-bold text-ll-primary ">PollyToon</h1>
       <p class="text-sm md:text-normal text-gray-300 mt-4 font-light">
         Welcome to Pollytoon, we are a company that provide various collections of 3D models that you can use on your
-        design, animation or game project. Each month we launch new collections, pick a plan to start get access to all
-        dataset.
+        design, animation or game project. Each month we launch new collections, login and get access to all
+        collections.
       </p>
       <div class="mt-10 flex">
         <button
-          class="bg-ll-primary px-5 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Sign
-          up for free</button>
+          class="bg-ll-primary px-5 py-2 rounded-bl-lg rounded-tr-lg mt-2 text-white active:scale-95 transform transition-transform">Login
+          to Download all for free</button>
       </div>
     </div>
     <div class=" z-0  w-full md:relative h-full  flex justify-center  items-end md:items-center">
