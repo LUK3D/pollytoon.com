@@ -74,7 +74,8 @@ const showMenu = ref(false);
                     </div>
                     <p class="text-sm mx-1">{{ loggedUser.name }}</p>
                 </div>
-                <GoogleLogin v-if="!loggedUser.email" :callback="onLoginCallback" prompt auto-login class="mb-2" />
+                <GoogleLogin v-if="!loggedUser.email" :callback="onLoginCallback" prompt auto-login
+                    class="mt-10 md:mt-0 ml-2 mb-2" />
 
 
 
